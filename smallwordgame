@@ -1,1 +1,46 @@
+package smallwordgame;
+import java.util.Scanner;
 
+public class smallwordgame {
+
+	public static void main(String[] args) {
+		Scanner obj =new Scanner(System.in);
+		char restart;
+		do {
+		boolean game_over=false;
+		
+		System.out.println("apo poses le3eis thelete na apoteleite o guros?");
+		int n=obj.nextInt();
+			String word[]=new String[n];
+			System.out.println("h le3h pou sou dwthike einai apple: kalh epituxia");
+			 String given_word="apple";
+			 System.out.println(given_word);
+			
+			System.out.println("dwse thn epomenh le3h");
+			String given_word2=obj.next();
+			//char restart;
+		    
+			for(int i=0; i<n; i++) {
+    			if(given_word.charAt(given_word.length()-1) ==given_word2.charAt(0)) {
+				System.out.println("dwsate swsth le3h");
+				word[i]=given_word2;
+				game_over=false;
+				given_word=given_word2;
+			
+				System.out.println("dwste thn epomenh le3h");
+				given_word2=obj.next();
+				}else {
+					System.out.println("game over");
+					game_over=true;
+					break;
+				}
+			}
+			
+			System.out.println("thelete na 3ana pai3ete");
+			System.out.println("ean nai pathste y alliws opoiodhpote allo gramma");
+			restart= obj.next().charAt(0);
+		}while(restart=='y');
+		System.out.println("euxaristoume pou pai3ate");
+		return;
+	}
+}
